@@ -1,5 +1,11 @@
 body{
   text-align: center;
+  background-image: url(JKchara.jpg);
+}
+
+#ask{
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 button{
@@ -18,4 +24,11 @@ button{
 ul{
   display: flex;
   justify-content: space-around;
+}
+
+#com_choice{
+  font-size: 20px;
+  width: 180px;
+  margin: 0 auto;
+  background-color: white;
 }
