@@ -4,15 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
 <body>
 
-    <div id="btn">ボタンだよ</div>
-    <!-- <div id="btn1">ボタン1だよ</div> -->
-    <!-- <div id="btn2">ボタン2だよ</div> -->
+  　<p id="ask">ねーねー、じゃんけんしよーよ</p>
+  <button id="yes">いいよ</button>
+  <button id="no">やだよ</button>
+  <p id="choice"></p>
+  <ul style="list-style:none">
+  <li id="img_goo"></li>
+  <li id="img_choki"></li>
+  <li id="img_par"></li>
+  </ul>
 
   <script>
+    var JKstart = document.getElementById('yes');
+    JKstart.onclick = function(){
+      choice.innerHTML = 'あなたの手'
+      choice.style.borderBottom = 'solid 1px red';
+      img_goo.innerHTML = '<img src="goo.png" alt="グー画像"/>';
+      img_choki.innerHTML = '<img src="choki.png" alt="チョキ画像"/>';
+      img_par.innerHTML = '<img src="par.png" alt="パー画像"/>';
+    };
+
+    
+
+    var Onegai = document.getElementById('no');
+    Onegai.onclick = function(){
+      if(ask.innerHTML == "ねーねー、じゃんけんしよーよ"){
+        ask.innerHTML = 'おねがい、おねがーい！！';
+        yes.innerHTML = 'しょうがないなあ';
+        no.innerHTML = '絶対いや！';
+      }else{
+        ask.innerHTML = 'ばかっ！！';
+      }
+    };
+
+
+    var goo = document.getElementById('img_goo');
+    goo.onclick = function(){
+      img_goo.style.border = 'solid 2px red';
+    };
+
+    var choki = document.getElementById('img_choki');
+    choki.onclick = function(){
+      img_choki.style.border = 'solid 2px yellow';
+    };
+
+    var par = document.getElementById('img_par');
+    par.onclick = function(){
+      img_par.style.border = 'solid 2px blue';
+    };
+
+
+
     // console.log("はじめてのジャバスクリプト");
     // console.log(23 * 5);
     // console.log(2000 / 1800);
@@ -63,23 +110,23 @@
     // }
 
  //これを用いることで場所を特定することが出来る（取得する）
-    var btn = document.getElementById('btn');
 
-    var rand = Math.floor(Math.random() * 5);
+ //グーボタン専用
+    // var btn0 = document.getElementById('btn0');
+    //   btn0.addEventListener('click', function() {
+    //     btn0.innerHTML = '<img src="C:/Users/daryong/Desktop/choki.png">';
+    //   })
 
-    btn.addEventListener('click', function(){
-      if(rand == 0){
-        btn.innerHTML = '<h1>0が出ました</h>';
-      }else if (rand == 1) {
-        btn.innerHTML = '<h1>1が出ました</h>';
-      }else if (rand == 2) {
-        btn.innerHTML = '<h1>2が出ました</h>';
-      }else if (rand == 3) {
-        btn.innerHTML = '<h1>3が出ました</h>';
-      }else {
-        btn.innerHTML = '<h1>4が出ました</h>';
-      }
-    })
+    // var rand = Math.floor(Math.random() * 3);
+
+    // btn0.addEventListener('click', function(){
+    //   if(rand == 0){
+    //     btn.innerHTML = '<h1>0が出ました</h>';
+    //   }else if (rand == 1) {
+    //     btn.innerHTML = '<h1>1が出ました</h>';
+    //   }else if (rand == 2) {
+    //     btn.innerHTML =
+    // })
 
     // var btn1 = document.getElementById('btn1');
     // var btn2 = document.getElementById('btn2');
