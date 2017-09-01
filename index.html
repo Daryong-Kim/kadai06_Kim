@@ -15,9 +15,9 @@
   <button id="no">やだよ</button>
   <p id="choice"></p>
   <ul style="list-style:none">
-  <li id="img_goo"></li>
-  <li id="img_choki"></li>
-  <li id="img_par"></li>
+  <li id="img_goo" value="0"></li>
+  <li id="img_choki" value="1"></li>
+  <li id="img_par" value="2"></li>
   </ul>
 
   <p id="start"></p>
@@ -46,11 +46,13 @@
     };
 
 
+    var choice_num = "";
     var goo = document.getElementById('img_goo');
     goo.onclick = function(){
       img_goo.style.border = 'solid 2px red';
       com_choice.innerHTML ='コンピュータの手';
       start.innerHTML ='<button>スタート</button>';
+      choice_num = 0;
     };
 
     var choki = document.getElementById('img_choki');
@@ -58,6 +60,7 @@
       img_choki.style.border = 'solid 2px yellow';
       com_choice.innerHTML ='コンピュータの手';
       start.innerHTML ='<button>スタート</button>';
+      choice_num = 1;
     };
 
     var par = document.getElementById('img_par');
@@ -65,8 +68,10 @@
       img_par.style.border = 'solid 2px blue';
       com_choice.innerHTML ='コンピュータの手';
       start.innerHTML ='<button>スタート</button>';
+      choice_num = 2;
     };
 
+    var star = document.getElementById('start');
     start.onclick = function(){
       var rand = Math.floor(Math.random() * 3);
       if(rand == 0){
@@ -74,9 +79,61 @@
         }else if (rand == 1) {
           computer.innerHTML = '<img src="choki.png" alt="チョキ画像"/>';
         }else if (rand == 2) {
-          computer.innerHTML =　'<img src="par.png" alt="パー画像"/>'
+          computer.innerHTML =　'<img src="par.png" alt="パー画像"/>';
+      }
+      if(choice_num == 0){
+        if(rand == 0){
+          alert("あいこだよ");
+        }else if (rand == 1) {
+          alert("君の勝ち！");
+        }else if (rand ==2) {
+          alert("君の負けー");
+        }
+      }else if (choice_num == 1) {
+        if(rand == 0){
+          alert("君の負けー");
+        }else if (rand == 1) {
+          alert("あいこちゃん");
+        }else if (rand ==2) {
+          alert("君の勝ち！");
+        }
+      }else if (choice_num == 2) {
+        if(rand == 0){
+          alert("君の勝ち！");
+        }else if (rand == 1) {
+          alert("君の負けdayo");
+        }else if (rand ==2) {
+          alert("あいこー");
+        }
       }
     }
+
+
+    // if(choice_num == 0){
+    //   if(rand == 0){
+    //     alert("あいこだよ");
+    //   }else if (rand == 1) {
+    //     alert("君の勝ち！");
+    //   }else if (rand ==2) {
+    //     alert("君の負けー");
+    //   }
+    // }else if (choice_num == 1) {
+    //   if(rand == 0){
+    //     alert("君の負けー");
+    //   }else if (rand == 1) {
+    //     alert("あいこちゃん");
+    //   }else if (rand ==2) {
+    //     alert("君の勝ち！");
+    //   }
+    // }else if (choice_num == 2) {
+    //   if(rand == 0){
+    //     alert("君の勝ち！");
+    //   }else if (rand == 1) {
+    //     alert("君の負けdayo");
+    //   }else if (rand ==2) {
+    //     alert("あいこー");
+    //   }
+    // };
 
 
     // var rand = Math.floor(Math.random() * 5);
